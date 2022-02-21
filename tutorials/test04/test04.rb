@@ -1,1 +1,0 @@
-puts "hellothsi is test03"
