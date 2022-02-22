@@ -3,37 +3,40 @@ class Person
   attr_accessor :name
 
   def initialize(name)
-    @p_name = name
+    @user_name = name
   end
-# print_name method
+
+  # print_name method
   def print_name
-    puts "Name : #{@p_name}"
+    puts "Name : #{@user_name}"
   end
 end
+
 # student child class
 class Student < Person
   attr_accessor :roll_no
 
   def initialize(name, roll_no)
-    @p_name = name
-    @stu_rn = roll_no
+    @user_name = name
+    @student_roll_number = roll_no
   end
-# print_roll method
+
+  # print_roll method
   def print_roll
-    puts "Student roll number : #{@stu_rn}"
+    puts "Student roll number : #{@student_roll_number}"
   end
 end
 
 puts "Please enter \"student\" if you are a student and if not ,enter \"person\" ?"
-person_type = gets.chomp
-if person_type == "person"
+user_type = gets.chomp
+if user_type == "person"
   puts "Enter the name"
   name = gets.chomp
   # creating object
   person = Person.new(name)
   # print perosn name
   person.print_name
-elsif person_type == "student"
+elsif user_type == "student"
   puts "Enter the name.(Eg. Kyaw Kyaw)"
   name = gets.chomp
   puts "Enter the roll_number.(Eg. 1)"
