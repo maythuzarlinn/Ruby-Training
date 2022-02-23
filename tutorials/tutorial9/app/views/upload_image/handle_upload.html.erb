@@ -1,0 +1,8 @@
+<h3 class="form">Public profile</h3>
+<div class="image">
+  <% if @url != nil %>
+    <%= image_tag ("#{@url}") %>
+  <% end %>
+  <%= link_to "Edit/Update", root_path, class: "link" %>
+</div>
+ 
