@@ -1,22 +1,15 @@
-class LoginController < ApplicationController
-  def landing_page
-    email = "mtzl@gmail.com"
-    password = "mtzl@2022"
-    @login = false
-    if (params["email"] == email && params["password"] == password)
-      session[:email] = params["email"]
-      @login = true
-    elsif (params["email"] == "" || params["password"] == "")
-      @error = "Please fill the informations!"
-      render :index
-    else (params["email"] != email || params["passwor"] != password)
-      @error = "email or password incorrect!"
-      render :index     end
-  end
+require "./config/initializers/constants.rb"
+require "./config/initializers/messages.rb"
 
-  def logout
-    session.delete(:email)
-    @login = false
-    redirect_to "/"
+class LoginController < ApplicationController
+  def login_landing_page
+    if @EMAIL == params[:email] && @PASSWORD == params[:password]
+      session[:email] = params[:email]
+      session[:password] = params[:password]
+      render "landing_page"
+    elsif (params[:email] == "" || params[:password] == "")
+      redirect_to root_path, alert: @ERRORINFOEMPTY
+    else (params[:email] != @EMAIL || params[:password] != @PASSWORD)
+      redirect_to root_path, alert: @ERRORINFO     end
   end
 end

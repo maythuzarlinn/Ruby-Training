@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+.error {
+  color: red;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid rgb(123, 119, 179);
+  color: white;
+  background-color: rgb(123, 119, 179);
+  text-decoration: none;
+  border-radius: 5px;
+}
