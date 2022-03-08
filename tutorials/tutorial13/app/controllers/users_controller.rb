@@ -38,7 +38,10 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to users_path
   end
-  
+ 
+  @date_start = DateTime.now
+  @date_end = @date_start - 1.month
+  @name = User.where(:created_at => @date_end..@date_start)
   private
 
   def user_params
