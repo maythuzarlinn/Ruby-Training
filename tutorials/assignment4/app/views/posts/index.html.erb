@@ -1,0 +1,39 @@
+<h2>What is on your mind?</h2>
+<%= form_with(model: @post, id: "new_post", local: false) do |f| %>
+<div>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
+<div>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+</div>
+<div>
+  <%= f.label :status %>
+  <%= f.radio_button :status, "private" %><label for="status_0">private</label>
+  <%= f.radio_button :status, "public" %><label for="status_1">public</label>
+</div>
+<div>
+  <%= f.submit %>
+</div>
+<% end %>
+
+<h3>Posts Table</h3>
+<table>
+  <thead>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th>Options</th>
+  </thead>
+  <tbody>
+   <%= render @posts %>
+  </tbody>
+</table>
+
+
+
+
+
+
+
