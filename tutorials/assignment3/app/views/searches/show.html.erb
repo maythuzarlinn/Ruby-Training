@@ -1,0 +1,19 @@
+<h1>Search Result</h1>
+<p><%= link_to "Back", new_search_path %></p>
+
+<% if @search.search_users.empty? %>
+  <p>No record found.</p>
+
+<% else %>
+
+<% @search.search_users.each do |e| %>
+<br>
+
+<div class="div">
+<h1><%= e.name %></h1>
+<p>Email: <%= e.email %></p>
+<p>Address: <%= e.address %></p>
+<p>Phone: <%= e.phone_number %></p>
+</div>
+<% end %>
+<% end %>
