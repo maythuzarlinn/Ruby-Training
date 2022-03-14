@@ -1,0 +1,13 @@
+<h1 class="show-content">Reading the file.</h1>
+<ul class="show-content">
+<% Dir.entries("public/GeneralFile/")[2..-1].each do |file_name| #[2..-1] as the first two will be ".", ".." %>
+  <p><%= "This is the text file,you have to read : #{URI.escape(file_name)}" %><p>
+<% end %>
+</ul>
+<%= form_with url: show_content_path, local: "true" do |form| %>
+    <div class="button show-content" >
+      <%= form.submit :click_me_to_read %>
+    </div>
+<% end %>
+
+
