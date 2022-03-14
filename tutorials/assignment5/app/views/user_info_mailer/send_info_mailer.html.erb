@@ -1,0 +1,15 @@
+<h1>UserInfo#send_info_mailer</h1>
+  <table>
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Address</th>
+  </thead>
+  <% @greeting.each do |greet| %>
+  <tr>
+    <td><%= greet[0] %></td>
+    <td><%= greet[1] %></td>
+    <td><%= greet[2] %></td>
+  </tr>
+  <% end %>
+</table>
