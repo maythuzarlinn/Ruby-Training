@@ -1,0 +1,27 @@
+<div class="form">
+  <h1>Login Form</h1>
+  <h3>Please sign up first if you don't have account.</h3>
+  <%= form_with url: handle_login_url, local: "true" do |form| %>
+  <div class="input">
+  <%= link_to "Sign Up", new_user_path %> 
+  </div>
+    <div class="input">
+      <%= form.text_field :attr, name: "email", placeholder: "Enter email" %>
+    </div>
+    <div class="input">
+      <%= form.password_field :attr, name: "password", placeholder: "Enter password" %>
+    </div>
+    
+    <%= link_to "Forgot password!!", password_reset_path %>
+    <div class="button">
+      <%= form.submit :login, class: "link" %>
+    </div>
+
+  <% end %>
+</div>
+
+<% flash.each do |type, msg| %>
+  <div class="err">
+   <%= msg %>
+   </div>
+<% end %>
